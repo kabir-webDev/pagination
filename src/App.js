@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Pagination from "./components/Paginationx";
+import Pagination from "./components/Pagination";
 import "./App.css";
 
 function App() {
@@ -217,7 +217,7 @@ function App() {
         "alias dolor cumque\nimpedit blanditiis non eveniet odio maxime\nblanditiis amet eius quis tempora quia autem rem\na provident perspiciatis quia",
     },
   ]);
-  const [showPerPage, setShowPerPage] = useState(4);
+  const [showPerPage, setShowPerPage] = useState(5);
   const [pagination, setPagination] = useState({
     start: 0,
     end: showPerPage,
