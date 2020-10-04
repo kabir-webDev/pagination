@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pagination from "./components/Pagination";
 import "./App.css";
 
 function App() {
+  const [post, setPost] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => setPost(data));
+  });
   const [posts, setPosts] = useState([
     {
       userId: 1,
@@ -217,7 +223,7 @@ function App() {
         "alias dolor cumque\nimpedit blanditiis non eveniet odio maxime\nblanditiis amet eius quis tempora quia autem rem\na provident perspiciatis quia",
     },
   ]);
-  const [showPerPage, setShowPerPage] = useState(5);
+  const [showPerPage, setShowPerPage] = useState(4);
   const [pagination, setPagination] = useState({
     start: 0,
     end: showPerPage,
